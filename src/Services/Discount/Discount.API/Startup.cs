@@ -27,7 +27,7 @@ public class Startup
         app.UseEndpoints(endpoints =>
         {
             endpoints.MapGrpcService<DiscountService>();
-            endpoints.MapGet(
+            endpoints.MapGet( // Não está funcionando no Mac. Achei essa explicação: https://stackoverflow.com/questions/58649775/can-i-combine-a-grpc-and-webapi-app-into-a-net-core-3-0-in-c
                 "/",
                 async ctx => 
                     await ctx.Response.WriteAsync("Comunication with gRPC endpoints must be made through a gRPC client.")
