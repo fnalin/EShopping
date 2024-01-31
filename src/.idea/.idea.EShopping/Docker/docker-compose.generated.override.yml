@@ -1,0 +1,22 @@
+# This is a generated file. Not intended for manual editing.
+version: "3.4"
+services:
+  basket.api:
+    build:
+      context: "/Users/fabianonalin/Development/fansoft-dev/EShopping/src"
+      dockerfile: "Services/Basket/Basket.API/Dockerfile"
+      target: "base"
+    command: []
+    entrypoint:
+    - "dotnet"
+    - "/app/bin/Debug/net6.0/Basket.API.dll"
+    environment:
+      ASPNETCORE_ENVIRONMENT: "Development"
+      DOTNET_USE_POLLING_FILE_WATCHER: "true"
+    image: "basketapi:dev"
+    ports: []
+    volumes:
+    - "/Users/fabianonalin/.nuget/packages:/root/.nuget/packages"
+    - "/Users/fabianonalin/Development/fansoft-dev/EShopping/src/Services/Basket/Basket.API:/app:rw"
+    - "/Users/fabianonalin/Development/fansoft-dev/EShopping/src:/src:rw"
+    working_dir: "/app"
